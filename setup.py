@@ -20,11 +20,11 @@ requirements = [
     "networkx",
 ]
 # Check if WNTR is installed, 
-# If so use default (for ARM devs, probably a better way) 
+# If so use default (for ARM devs, probably a better way...) 
 try:
     import wntr
 except ModuleNotFoundError:
-    requirements+=["wntr"]
+    requirements+=["wntr==0.5.0"]
 
 setup_requirements = [
     "pytest-runner",

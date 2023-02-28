@@ -60,7 +60,7 @@ def Initializer(tm, t0, engine='DD'):
 
     # calculate initial conditions using EPAnet engine
     for _,node in tm.nodes():
-        if node.leak_status == True:
+        if node._leak_status == True:
             node.add_leak(tm, area=node.emitter_coeff/np.sqrt(2*9.81),
                     discharge_coeff = 1, start_time = t0)
     if engine.lower() == 'dd':

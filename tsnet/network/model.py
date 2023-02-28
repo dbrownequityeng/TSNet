@@ -56,7 +56,7 @@ class TransientModel (WaterNetworkModel):
         i =1
         for _, node in self.nodes():
             node.id = i
-            node.leak_status = False
+            node._leak_status = False
             node.burst_status = False
             node.blockage_status = False
             node.pulse_status = False
@@ -214,7 +214,7 @@ class TransientModel (WaterNetworkModel):
 
         leak_node = self.get_node(name)
         leak_node.emitter_coeff += coeff
-        leak_node.leak_status = True
+        leak_node._leak_status = True
 
     def add_burst(self, name, ts, tc, final_burst_coeff):
         """Add leak to the transient model
