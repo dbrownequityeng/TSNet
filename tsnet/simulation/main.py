@@ -444,10 +444,11 @@ def MOCSimulator(tm, results_obj='results', friction='steady'):
                 node.tank_flow_timeseries[ts] = node.tank_flow
 
     for _,pipe in tm.pipes():
+        # There is some issue here with the @property and being a read only value for *.head->
         if not isinstance(pipe.start_node.head, np.ndarray):
-            pipe.start_node.head = np.copy(pipe.start_node_head)
+            pipe.start_node._head = np.copy(pipe.start_node_head)
         if not isinstance(pipe.end_node.head, np.ndarray):
-            pipe.end_node.head = np.copy(pipe.end_node_head)
+            pipe.end_node._head = np.copy(pipe.end_node_head)
 
     tm.simulation_timestamps = tt[1:]
 

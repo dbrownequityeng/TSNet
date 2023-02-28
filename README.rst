@@ -22,6 +22,9 @@ TSNet
 
 TSNet performs transient simulation in water networks using Method of Characteristics (MOC).
 
+Warning: This is a development fork of the original repo.
+We are currently trying to update the repo to more modern versions of WNTR, Python, and Numpy.
+Not for general use distribution as of yet. (Buyer Beware!)
 
 * Free software: MIT license
 * GitHub: https://github.com/glorialulu/TSNet.git
