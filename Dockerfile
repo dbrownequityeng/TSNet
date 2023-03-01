@@ -10,9 +10,9 @@ RUN wget https://github.com/USEPA/WNTR/archive/refs/tags/0.5.0.tar.gz && \
     tar -xvf 0.5.0.tar.gz && cd  ./WNTR-0.5.0 &&\
     python setup.py develop --build
 
-RUN git clone https://github.com/dbrownequityeng/TSNet.git && \ 
-    cd ./TSNet && \
-    python setup.py install
+# RUN git clone https://github.com/dbrownequityeng/TSNet.git && \ 
+#     cd ./TSNet && \
+#     python setup.py install
 
 WORKDIR /root/shared
 
