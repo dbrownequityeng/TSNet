@@ -19,12 +19,20 @@ requirements = [
     "plotly",
     "networkx",
 ]
-# Check if WNTR is installed, 
-# If so use default (for ARM devs, probably a better way...) 
+
+
+'''
+Check if WNTR is installed, 
+Currently, the install over at WNTR is changing
+Must install it first manually before this. 
+'''
+
 try:
     import wntr
+    if wntr.__version__!="0.5.0":
+        raise ModuleNotFoundError(f"WNTR version 0.5.0 module not found. {wntr.__version__} version found instead.")
 except ModuleNotFoundError:
-    requirements+=["wntr==0.5.0"]
+    raise ModuleNotFoundError("WNTR module not found. Install version 0.5.0 before this package. ")
 
 setup_requirements = [
     "pytest-runner",
